@@ -18,7 +18,9 @@ Span &Span::operator=(const Span &other) {
 	return (*this);
 };
 
-Span::~Span() {}
+Span::~Span() {
+
+};
 
 void Span::addNumber(int number) 
 {
@@ -29,7 +31,7 @@ void Span::addNumber(int number)
 
 int Span::shortestSpan() const {
 	if (_numbers.size() < 2)
-		throw (std::logic_error("Not enough numbers to find a span"));
+		throw (std::logic_error("Add atleast one number !"));
 
 	std::vector<int> sorted = _numbers;
 	std::sort(sorted.begin(), sorted.end());
@@ -41,11 +43,11 @@ int Span::shortestSpan() const {
 			minSpan = span;
 	}
 	return (minSpan);
-};
+}
 
 int Span::longestSpan() const {
     if (_numbers.size() < 2)
-        throw (std::logic_error("Not enough numbers to find a span"));
+        throw (std::logic_error("Add atleast one number !"));
     
     int min = *std::min_element(_numbers.begin(), _numbers.end());
     int max = *std::max_element(_numbers.begin(), _numbers.end());

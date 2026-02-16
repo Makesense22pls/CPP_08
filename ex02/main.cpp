@@ -25,5 +25,5 @@ int main()
 	++it;
 	}
 	std::stack<int> s(mstack);
-	return 0;
+	return (0);
 }
