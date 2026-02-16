@@ -4,6 +4,8 @@
 
 int main()
 {
+	// AVEC MUTANT
+
 	MutantStack<int> mstack;
 	mstack.push(5);
 	mstack.push(17);
@@ -24,6 +26,32 @@ int main()
 	std::cout << *it << std::endl;
 	++it;
 	}
-	std::stack<int> s(mstack);
+
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+	std::cout << std::endl;
+
+	//AVEC LIST
+	std::list<int> mlist;
+	mlist.push_back(5);
+	mlist.push_back(17);
+	std::cout << mlist.back() << std::endl;
+	mlist.pop_back();
+	std::cout << mlist.size() << std::endl;
+	mlist.push_back(3);
+	mlist.push_back(5);
+	mlist.push_back(737);
+	//[...]
+	mlist.push_back(0);
+	std::list<int>::iterator it_ = mlist.begin();
+	std::list<int>::iterator ite_ = mlist.end();
+	++it_;
+	--it_;
+	while (it_ != ite_)
+	{
+		std::cout << *it_ << std::endl;
+		++it_;
+	}
 	return (0);
 }
